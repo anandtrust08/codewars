@@ -5,11 +5,11 @@ import org.junit.Test;
 import java.math.BigInteger;
 import java.net.URL;
 import java.util.Random;
-public class UrlMapTest {
+public class UrlMap2Test {
   private Random r = new Random();
   @Test
   public void testCodewars() throws Exception {
-    UrlMap map = new UrlMap();
+    UrlMap2 map = new UrlMap2();
     URL url1 = new URL("http://www.codewars.com/");
     long time1 = 12345L;
     URL url2 = new URL("http://www.codewars.com/kata/url-timestamps/");
@@ -22,7 +22,7 @@ public class UrlMapTest {
 
   @Test
   public void testNew() throws Exception {
-    UrlMap map = new UrlMap();
+    UrlMap2 map = new UrlMap2();
     URL url1 = new URL("http://www.codewars.com/");
     URL url2 = new URL("http://www.codewars.com/kata/url-timestamps/");
     assertEquals(-1, map.getTimestamp(url1));
@@ -33,7 +33,7 @@ public class UrlMapTest {
   // 10_000_000: 105s
   @Test
   public void testTime() throws Exception { 
-	   UrlMap map = new UrlMap();
+	   UrlMap2 map = new UrlMap2();
 	  for (int i=0;i<100;i++) {
 		    URL url2 = new URL("http://" + r.nextInt(100000000) + " " + r.nextInt(100000000) );
 		    long time2 = r.nextInt(100000000);
@@ -45,7 +45,7 @@ public class UrlMapTest {
   
   @Test
   public void testRepeat() throws Exception { 
-	   UrlMap map = new UrlMap();
+	   UrlMap2 map = new UrlMap2();
 	  for (int i=0;i<1000000;i++) {
 		    URL url = new URL("http://" + r.nextInt(100000000) + " " + r.nextInt(100000000) );
 		    long time2 = r.nextInt(100000000);
