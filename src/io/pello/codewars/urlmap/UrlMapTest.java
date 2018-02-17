@@ -2,8 +2,9 @@ package io.pello.codewars.urlmap;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import java.net.URL;
-
+import java.util.Random;
 public class UrlMapTest {
+  private Random r = new Random();
   @Test
   public void testCodewars() throws Exception {
     UrlMap map = new UrlMap();
@@ -26,11 +27,16 @@ public class UrlMapTest {
     assertEquals(-1, map.getTimestamp(url2));
   }
   
+  //1_000_000: 4s
+  // 10_000_000: 105s
   @Test
-  public void testTime() throws Exception {
-	  for (int i=0;i<100000;i++) {
-		  testNew();
-		  testCodewars();
+  public void testTime() throws Exception { 
+	   UrlMap map = new UrlMap();
+	  for (int i=0;i<1000000;i++) {
+		    URL url2 = new URL("http://" + r.nextInt(100000000) + " " + r.nextInt(100000000) );
+		    long time2 = r.nextInt(100000000);
+		    map.setTimestamp(url2, time2);
+		    assertEquals(time2, map.getTimestamp(url2));
 	  }
 		  
   }
