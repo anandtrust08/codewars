@@ -8,10 +8,10 @@ public class UrlMap {
 	private Map<Integer, Long> table = new HashMap<Integer, Long>();
 	
 	public void setTimestamp(URL url, long timestamp) {
-	    table.put(System.identityHashCode(url),timestamp);
+	    table.put(System.identityHashCode(url)+url.toString().length(),timestamp);
 	  }
 
 	public long getTimestamp(URL url) {
-		return table.getOrDefault(System.identityHashCode(url),-1L);
+		return table.getOrDefault(System.identityHashCode(url)+url.toString().length(),-1L);
 	}
 }
