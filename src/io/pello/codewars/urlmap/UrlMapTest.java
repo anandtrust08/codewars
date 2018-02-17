@@ -36,9 +36,9 @@ public class UrlMapTest {
 		    URL url2 = new URL("http://" + r.nextInt(100000000) + " " + r.nextInt(100000000) );
 		    long time2 = r.nextInt(100000000);
 		    map.setTimestamp(url2, time2);
+		    
 		    assertEquals(time2, map.getTimestamp(url2));
-	  }
-		  
+	  }	  
   }
 }
 
