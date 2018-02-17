@@ -1,7 +1,6 @@
 package io.pello.codewars.enough_is_enough;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
