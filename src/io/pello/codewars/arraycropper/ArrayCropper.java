@@ -1,36 +1,81 @@
 package io.pello.codewars.arraycropper;
 
+import java.util.*;
 public class ArrayCropper {
-	   public static int[][] getCroppedFieldAsArray(int[][] src) {
-		   int maxh = 0;
-		   int maxv = 0;
-		   
-		   for (int i=0;i<src.length;i++)
-			   for (int j=src[i].length-1;j>=0;j--)
-				   if (src[i][j] == 0 && j >= maxh)
-					   maxh = j;
-				   else
-					   break;
+	public static int[][] removeRows(int[][] src) {
 
-		   for (int i=src.length-1;i>=0;i--) {
-			   boolean allZero = true;
-			   for (int j=0;j<src[i].length;j++) {
-				   if (src[i][j] == 1) {
-					   allZero = false;
-					   break;
-				   }
-		   		}
-			   if (allZero)
-				   maxv = i;
-		   }
-		   
-		  // System.out.println("Let see: maxh: " + maxh + " maxv: " + maxv);	   
-		   int result[][] = new int[maxv][maxh];
-		   
-		   for (int i=0;i<maxv;i++)
-			   for (int j=0;j<maxh;j++) 
-				   result[i][j] = src[i][j];
+		List<int[]> numbers = new ArrayList<int[]>();
+		for (int i = 0; i < src.length; i++)
+			numbers.add(src[i]);
+		
+		System.out.println("Total size: " + numbers.size());;
 
-		     return result;
-	   }
+		for (int i = src.length-1; i >=0; i--) {
+			boolean allZero = true;
+			for (int j = 0; j < src.length; j++) {
+				if (src[i][j] == 1) {
+					allZero = false;
+					break;
+				}
+			}
+			if (allZero) {
+				numbers.remove(i);
+			}
+		}
+		int x = numbers.size();
+		int y = numbers.size() > 0 ? numbers.get(0).length : 0;
+		int[][] result = new int[x][y];
+
+		for (int i = 0; i < numbers.size(); i++)
+			for (int j = 0; j < numbers.get(i).length; j++)
+				result[i][j] = numbers.get(i)[j];
+
+		return result;
+	}
+
+	public static int[][] getCroppedFieldAsArray(int[][] src) {
+		int maxh = 0;
+		int minh = src.length-1;
+
+		printArray(src);
+		src = removeRows(src);
+		printArray(src);
+
+		for (int i = 0; i < src.length; i++) {
+			int minpartial = src[i].length - 1;
+			int maxpartial = 0;
+			for (int j = 0; j < src[i].length; j++)
+				if (src[i][j] == 1) {
+					minpartial = (j < minpartial) ? j : minpartial;
+					maxpartial = (j > maxpartial) ? j : maxpartial;
+					}
+
+			maxh = (maxpartial > maxh) ? maxpartial : maxh;
+			minh = (minpartial < minh) ? minpartial : minh;
+		}
+
+		System.out.println("Let see: minh: " + minh + " maxh: " + maxh + " length: " + src.length + ":" + ((maxh - minh) + 1));
+		int result[][] = new int[src.length][(maxh - minh) + 1];
+		//
+		for (int i = 0; i < src.length; i++) {
+			for (int j = 0; j < result[i].length; j++) {
+				result[i][j] = src[i][j+minh];
+				System.out.print(result[i][j] + ", ");
+			}
+
+			System.out.println("");
+		}
+
+		return result;
+	}
+
+	public static void printArray(int[][] src) {
+		System.out.println("Array: ");
+		for (int i = 0; i < src.length; i++) {
+			for (int j = 0; j < src[i].length; j++)
+				System.out.print(src[i][j] + ", ");
+
+			System.out.println("");
+		}
+	}
 }

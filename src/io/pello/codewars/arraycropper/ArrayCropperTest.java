@@ -19,13 +19,30 @@ class ArrayCropperTest {
         int[][] res = ArrayCropper.getCroppedFieldAsArray(example[0]);
         assertEquals(example[1], res);
     }
+  
+    @Test
+    public void test3() {
+       int[][][] example = {
+          {{0,0,0,0},
+           {0,0,1,0},
+           {0,1,1,0},
+           {0,0,0,1}},
+          {{0,1,0},
+           {1,1,1},
+           {0,0,1}}
+        };
+        int[][] res = ArrayCropper.getCroppedFieldAsArray(example[0]);
+        assertEquals(example[1], res);
+    }
     
     @Test
     public void test2() {
        int[][][] example = {
-          {{0,1,0,0,0,0},
+          {{0,0,0,0,0,0},
            {0,0,1,0,0,0},
-           {1,1,1,0,1,0},
+           {0,1,1,0,0,0},
+           {0,0,0,1,0,0},
+           {0,0,0,0,0,0},
            {0,0,0,0,0,0}},
           {{0,1,0,0,0},
            {0,0,1,0,0},
