@@ -8,7 +8,9 @@ class ValidateCreditCardTest {
 
 	  @Test
 	  public void test891(){
-	    assertEquals(false, ValidateCreditCard.validate("891"));
+	   // assertEquals(false, ValidateCreditCard.validate("1714"));
+	    //assertEquals(false, ValidateCreditCard.validate("12345"));
+	   assertEquals(false, ValidateCreditCard.validate("891"));
 	  }
 
 }
