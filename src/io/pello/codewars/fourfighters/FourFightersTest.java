@@ -12,6 +12,7 @@ class FourFightersTest {
         assertEquals(41, FourFighters.shortestTime(new int[] {3,7,10,18}));
         assertEquals(27, FourFighters.shortestTime(new int[]{5,5,6,7}));
         assertEquals(63, FourFighters.shortestTime(new int[] {5,6,30,40}));
+        assertEquals(21, FourFighters.shortestTime(new int[] {5,6,3,4}));
     }
 
 }
