@@ -28,11 +28,12 @@ public class PrimeFactorizer {
                         System.out.println("New : \n" + factor);
                     }
                     partial = partial / i;
+                    if (isItDone(factor,n)) break;
                 }
 
             }
             
-            if (isItDone(factor,n)) break;
+
             
         }
         
