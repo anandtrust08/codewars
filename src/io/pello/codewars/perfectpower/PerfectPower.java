@@ -2,21 +2,15 @@ package io.pello.codewars.perfectpower;
 
 public class PerfectPower {
     public static int[] isPerfectPower(int n) {
-        if (n < 4) {
-            return null;
-        }
+        if (n < 4)  return null;
+        
 
-        int limit = (int)(n / 2);
+        for (int i = 2; i < Math.log(n) / Math.log(2) + 1; i++) 
+            for (int j = 2; Math.pow(j, i) <= n; j++) 
+                if (Math.pow(j, i) == n) 
+                    return new int[]{j, i};
 
-        for (int i = 2; i <= limit; i++) {
-            double r = sqrt(n, i);
-            System.out.println(n + ": " + i + "<= "+ limit +", r:" + r);
-            if (noDecimals(r) && Math.pow(r, i) == n) {
-                System.out.println(n + ". Found: {" + (int) r + "," + i + "}");
-                return new int[] { (int) r, i };
-            } 
-        }
-
+                    
         return null;
     }
 
@@ -24,11 +18,13 @@ public class PerfectPower {
         double t;
 
         double squareRoot = number / base;
+        int count = 0;
 
         do {
             t = squareRoot;
             squareRoot = (t + (number / t)) / base;
-            System.out.println(Math.round(t) + " "+ Math.round(squareRoot));
+            System.out.println(t+ " "+ squareRoot);
+            if (++count == number) break;
         } while ((Math.round(t) - Math.round(squareRoot)) != 0);
 
         return squareRoot;
