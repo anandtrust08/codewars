@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 class DirReductionTest {
     @Test
     public void testSimpleDirReduc() throws Exception {
-        //assertEquals(new String[] { "WEST" }, DirReduction.dirReduc(new String[] { "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" }));
+        assertArrayEquals(new String[] { "WEST" }, DirReduction.dirReduc(new String[] { "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" }));
 
-       assertEquals(new String[] { "NORTH", "WEST", "SOUTH", "EAST" }, DirReduction.dirReduc(new String[] { "NORTH", "WEST", "SOUTH", "EAST" }));
+       assertArrayEquals(new String[] { "NORTH", "WEST", "SOUTH", "EAST" }, DirReduction.dirReduc(new String[] { "NORTH", "WEST", "SOUTH", "EAST" }));
     }
 }
