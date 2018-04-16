@@ -16,6 +16,7 @@ class FormatWordsTest {
        assertEquals("", FormatWords.formatWords(new String[] {}));
         assertEquals("", FormatWords.formatWords(null));
        assertEquals("", FormatWords.formatWords(new String[] {""}));
+       assertEquals("one, two, three, five, six and four", FormatWords.formatWords(new String[] {"one", "two", "three, , five, ,six", "four"}));
     }
 
 }
