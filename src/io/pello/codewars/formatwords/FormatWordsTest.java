@@ -1,11 +1,9 @@
 package io.pello.codewars.formatwords;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 
 class FormatWordsTest {
-
     @Test
     public void sampleTests() {
         assertEquals("one, two, three and four", FormatWords.formatWords(new String[] {"one", "two", "three", "four"}));
