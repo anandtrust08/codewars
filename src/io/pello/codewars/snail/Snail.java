@@ -4,59 +4,75 @@ public class Snail {
     private static int k=0;
     public static int[] snail(int[][] array) {
         int [] result = new int[array.length*array.length];
-
+        int [] position = new int[] {0,0};
+        
         int i = 0;
         int j = 0;
+        int len = array[0].length;
 
         int times = 1;
-        right(array, result, 0, array[0].length);
-        i++;
-        j = array.length-i;
-        printar(result, i, j);
+        position = right(array, result, position[0], position[0], len);
+        printar(result, position);
+        
+        position[0]++;
+        position[1] = array.length-position[0];
+        
+
         System.out.println("Beg: " + times);
         
         while (times <= (array.length-1)) {
-            System.out.println("Beg: " + times);
             if (times % 2 != 0) {
-                System.out.println("Gping down, left " + times);
-               // down(array, result, i, array[i].length);
-               // left(array, result, i, j);
+               position= down(array, result, position[0], position[1], --len);
+               printar(result, position);
+               position[1]--;
+               position= left(array, result, position[0], position[1], len);
+               printar(result, position);
+               len--;
             } else {
-                System.out.println("Gping right, upt " + times);
-               // up(array, result, i, j);
-               // right(array, result, i, array[i].length);
+               position = up(array, result, position[0], position[1], len);
+               printar(result, position);
+               position = right(array, result,position[0], position[1], len);
+              printar(result, position);
             }
             times = times + 1;
-            System.out.println("End: " + times);;
         }
 
         return null;
       }
     
-    private static void printar(int[] result, int i, int j) {
+    private static void printar(int[] result, int pos []) {
         for (int x=0;x<result.length;x++)
             System.out.print(result[x]+", ");    
        
-        System.out.println("\n Pos: [" + i +"," + j + "]");
+        System.out.println("\n Pos: [" + pos[0] +"," + pos[1] + "]");
     }
     
-    private static void right(int[][] array, int[] result, int i, int j) {
-       for (int x=i;x<j;x++)
-           result[k++] = array[i][x];
+    private static int[] right(int[][] array, int[] result, int i, int j, int len) {
+       for (int x=0;x<len;x++)
+           result[k++] = array[i][j+x];
         
+       return new int[]{i,j+len-1};
     } 
     
-    private static void down(int[][] array, int[] result, int i, int j) {
-        for (int x=i;x<j;x++)
-            result[k++] = array[i][x];
+    private static int[] down(int[][] array, int[] result, int i, int j, int len) {
+        for (int x=0;x<len;x++)
+            result[k++] = array[i+x][j];
+        
+        return new int[]{i+len-1,j};
     }
     
-    private static void left(int[][] array, int[] result, int i, int j) {
-
+    private static int[] left(int[][] array, int[] result, int i, int j, int len) {
+        for (int x=0;x<len;x++)
+            result[k++] = array[i][j-x];
+         
+        return new int[]{i-1,j-len+1};
     }
 
-    private static void up(int[][] array, int[] result, int i, int j) {
-
+    private static int[] up(int[][] array, int[] result, int i, int j, int len) {
+        for (int x=0;x<len;x++)
+            result[k++] = array[i-x][j];
+        
+        return new int[]{i,j+1};
     }
 
 }
