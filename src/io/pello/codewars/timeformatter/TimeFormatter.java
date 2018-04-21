@@ -1,7 +1,6 @@
 package io.pello.codewars.timeformatter;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TimeFormatter {
@@ -26,7 +25,6 @@ public class TimeFormatter {
             }
         }
 
-        System.out.println(values);
         if (values.size() == 1) {
                return values.get(0) + " " + listNames.get(0) + (values.get(0) > 1 ? "s" : "");
         } else {
