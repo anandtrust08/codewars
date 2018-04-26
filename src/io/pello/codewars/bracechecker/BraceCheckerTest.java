@@ -10,15 +10,7 @@ public class BraceCheckerTest {
     @Test
     public void testValid1() {
         assertEquals(true, checker.isValid("()"));
-    }
-
-    @Test
-    public void testValid2() {
         assertEquals(true, checker.isValid("(){}[]"));
-    }
-    
-    @Test
-    public void testValid3() {
         assertEquals(true, checker.isValid("([{}])"));
     }
 
