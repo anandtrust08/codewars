@@ -9,6 +9,7 @@ import org.junit.runners.JUnit4;
 public class AntiStringTest {
     @Test
     public void Basic1() {
+        assertEquals("abcdeFGHI", AntiString.antiString("ABCDEfghi"));
         assertEquals("a0", AntiString.antiString("9Z"));
     }
     @Test
