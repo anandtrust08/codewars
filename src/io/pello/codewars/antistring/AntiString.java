@@ -7,15 +7,21 @@ public class AntiString {
             char c = str.charAt(i);
             
            if ((int)c >= 65 && (int)c<=90) {
-               result += (c+"").toLowerCase();
-           } else {
-               result += (c+"").toUpperCase();
+               c = (char)(65 + (90- (int)c));
+               result = (c+"").toLowerCase() + result;
+           } 
+           else if((int)c >= 97 && (int)c<=122)  {
+               c = (char)(97 + (122-(int)c));
+               result = (c+"").toUpperCase() + result;
+           } else if ((int)c >= 48 && (int)c<=57) {
+               System.out.println("Number!! : " + (int)c + ": " +(char)(48 + ((int)c-48)));
+               result = (char)(48 + (57 - (int)c)) + result;
            }
-
         }
-        System.out.println((int)'A' + ":"+ (char)(65 + (66-65)) + ":" +(int)'Z'+":" + (int)'a' + ":" +(int)'z');
+        
+        System.out.println((int)'A' + ":"+ (char)(65 + (66-65)) + ":" +(int)'Z'+":" + (int)'0' + ":" +(int)'9');
         return result;
-        // 65 + (code-65)
+        // 65 + (97-code)
         //97 +
     }
 }
