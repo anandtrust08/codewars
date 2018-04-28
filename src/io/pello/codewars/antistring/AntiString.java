@@ -19,9 +19,6 @@ public class AntiString {
            }
         }
         
-        System.out.println((int)'A' + ":"+ (char)(65 + (66-65)) + ":" +(int)'Z'+":" + (int)'0' + ":" +(int)'9');
         return result;
-        // 65 + (97-code)
-        //97 +
     }
 }
