@@ -1,6 +1,5 @@
 package io.pello.codewars.rotatearray;
 
-import java.util.Arrays;
 
 public class RotateArray {
     public int[] rotate(int[] numbers, int steps) {
