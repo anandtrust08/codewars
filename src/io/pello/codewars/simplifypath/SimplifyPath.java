@@ -1,15 +1,15 @@
 package io.pello.codewars.simplifypath;
 
 import java.util.Arrays;
-import java.util.Deque;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.Set;
+import java.util.Stack;
 
 public class SimplifyPath {
     public String simplify(String path) {
-        Deque<String> stack = new LinkedList<>();
-        Set<String> skip = new HashSet<>(Arrays.asList("..",".",""));
+        
+        Stack<String> stack = new Stack<String>();
+        Set<String> skip = new HashSet<String>(Arrays.asList("..",".",""));
         
         for (String dir : path.split("/")) {
           if (dir.equals("..") && !stack.isEmpty()) {

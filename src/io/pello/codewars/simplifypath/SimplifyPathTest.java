@@ -17,6 +17,8 @@ class SimplifyPathTest {
     @Test
     void testSimplify() {
         assertEquals(simplifyPath.simplify(""),"/");
+        assertEquals(simplifyPath.simplify("/home/"),"/home");
+        assertEquals(simplifyPath.simplify("/a/./b/../../c/"),"/c");
     }
 
 }
