@@ -1,15 +1,9 @@
 package io.pello.codewars.linkedlist.removednth;
 
 import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ListNodeTest {
-
-    @BeforeEach
-    void setUp() throws Exception {
-    }
 
     @Test
     void testListNodeInt() {
