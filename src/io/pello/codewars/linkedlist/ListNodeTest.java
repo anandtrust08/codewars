@@ -1,4 +1,4 @@
-package io.pello.codewars.linkedlist.removednth;
+package io.pello.codewars.linkedlist;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;

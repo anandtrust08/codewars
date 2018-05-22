@@ -1,5 +1,7 @@
 package io.pello.codewars.linkedlist.removednth;
 
+import io.pello.codewars.linkedlist.ListNode;
+
 public class RemovedNthElement {
     public ListNode removeNthFromEnd(ListNode head, int n) {
 

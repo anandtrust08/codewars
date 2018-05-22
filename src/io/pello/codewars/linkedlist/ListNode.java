@@ -1,14 +1,14 @@
-package io.pello.codewars.linkedlist.removednth;
+package io.pello.codewars.linkedlist;
 
 public class ListNode {
     private int value;
     private ListNode next;
 
-    ListNode(int v) {
+    public ListNode(int v) {
         value = v;
     }
 
-    ListNode(int v, ListNode next) {
+    public ListNode(int v, ListNode next) {
         value = v;
         this.next = next;
     }

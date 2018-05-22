@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import io.pello.codewars.linkedlist.ListNode;
+
 class RemovedNthElementTest {
     
     private ListNode listNode;
