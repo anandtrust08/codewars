@@ -30,6 +30,7 @@ class MergeListsTest {
     void testToString() {
         listNode1 = null;
         listNode2 = null;
+        assertNull(mergeLists.merge(listNode1, listNode2));
     }
 
 }
