@@ -3,24 +3,30 @@ package io.pello.codewars.linkedlist.rotate;
 import io.pello.codewars.linkedlist.ListNode;
 
 public class RotateList {
-    public ListNode rotateRight(ListNode head, int n) {
-        if (head == null || head.getNext() == null)
-            return head;
-        ListNode dummy = new ListNode(0);
-        dummy.setNext(head);
-        ListNode fast = dummy, slow = dummy;
+    public ListNode rotateRight(ListNode list, int n) {
+        
+        if (list == null || list.getNext() == null) {
+            return list;
+        }
+        
+        ListNode tmpList = new ListNode(0);
+        tmpList.setNext(list);
+        ListNode fast = tmpList;
+        ListNode slow = tmpList;
 
-        int i;
-        for (i = 0; fast.getNext() != null; i++)// Get the total length
+        int listLength;
+        for (listLength = 0; fast.getNext() != null; listLength++) {
             fast = fast.getNext();
+        }
 
-        for (int j = i - n % i; j > 0; j--) // Get the i-n%i th node
+        for (int j = listLength - n % listLength; j > 0; j--) {
             slow = slow.getNext();
+        }
 
-        fast.setNext(dummy.getNext()); // Do the rotation
-        dummy.setNext(slow.getNext());
+        fast.setNext(tmpList.getNext());
+        tmpList.setNext(slow.getNext());
         slow.setNext(null);
 
-        return dummy.getNext();
+        return tmpList.getNext();
     }
 }
