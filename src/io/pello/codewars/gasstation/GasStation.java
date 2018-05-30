@@ -7,8 +7,6 @@ public class GasStation {
       int total = 0;
       int tank = 0;
 
-        // if car fails at 'start',
-        // record the next station
       for (int i = 0; i < gas.length; i++)
         if ((tank = tank + gas[i] - cost[i]) < 0) {
           start = i + 1;
