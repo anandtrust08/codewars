@@ -25,7 +25,7 @@ class TreeNodeTest {
         treeNode.addNode(15);
         treeNode.addNode(666);
         assertEquals(treeNode.getValue(), 42);
-        assertEquals(treeNode.getRight().getValue(), 15);
+        assertEquals(treeNode.getRight().getValue(), 666);
         assertNull(treeNode.getRight().getRight());
         assertNull(treeNode.getLeft().getLeft()); 
     }
