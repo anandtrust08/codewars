@@ -34,7 +34,6 @@ class InorderTraversalTest {
         treeNode.addNode(668);
         treeNode.addNode(6);
 
-        
         assertEquals(inorderTraversal.traverse(treeNode).toString(),"[6, 15, 42, 666, 668]");
     }
 }

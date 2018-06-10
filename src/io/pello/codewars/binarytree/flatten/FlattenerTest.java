@@ -6,7 +6,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import io.pello.codewars.binarytree.TreeNode;
-import io.pello.codewars.binarytree.inordertraversal.InorderTraversal;
+
 
 class FlattenerTest {
     private Flattener flattener;
