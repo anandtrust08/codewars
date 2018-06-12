@@ -5,12 +5,12 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class MatrixSpiralTest {
-    private MatrixSpiral matrixSpiral;
+class MatrixSpiralTraverseTest {
+    private MatrixSpiralTraverse matrixSpiral;
 
     @BeforeEach
     void setUp() throws Exception {
-        matrixSpiral = new MatrixSpiral();
+        matrixSpiral = new MatrixSpiralTraverse();
     }
 
     @Test

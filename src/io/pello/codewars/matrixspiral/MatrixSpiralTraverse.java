@@ -3,7 +3,7 @@ package io.pello.codewars.matrixspiral;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MatrixSpiral {
+public class MatrixSpiralTraverse {
     public List<Integer> spiral(int[][] matrix) {
 
         List<Integer> result = new ArrayList<Integer>();
