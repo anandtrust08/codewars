@@ -1,7 +1,8 @@
 package io.pello.codewars.dashatize;
 
 public class Dashatize {
-    public static String dashatize (int number) {
+    public static String dashatize (int num) {
+        long number = num * 1L;
         String result = "";
         String [] chars = (Math.abs(number)+"").split("");
         
